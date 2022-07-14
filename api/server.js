@@ -14,17 +14,17 @@ server.get('/api/users', (req, res) => {
 });
 
 server.post('/api/register', (req, res) => {
-    const { user, password } = req.body;
-        if (!user || !password) {
+    const { username, password } = req.body;
+        if (!username || !password) {
             res.status(400).json({ message: "Please provide both username and password" })
         } else {
-            Posts.insert({ user, password})
+            Posts.insert()
             .then(post => {
                 res.status(201).json(post)
             })
             .catch(err => {
                 console.log(err)
-                res.status(500).json({ message: err.message })
+                res.status(500).json({ message: "Not sure what to do" })
             });
         }
 });

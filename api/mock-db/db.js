@@ -5,11 +5,11 @@ const Users = {
 }
 
 const Posts = {
-    insert(post) {
-        return findAll()
-        .insert(post)
-        .then(Promise.resolve(findAll()))
+    insert() {
+        return Promise.resolve([{ username: "Bilbo", password: "Somthingss"}])
     }
 }
 
-module.exports = Users;
+//Not really sure how to build out functionality of a database yet, as in how to recieve a post request.
+
+module.exports = Users, Posts;
